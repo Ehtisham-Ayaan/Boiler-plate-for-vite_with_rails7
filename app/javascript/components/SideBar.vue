@@ -51,7 +51,7 @@
         </div>
 
         <div class="img-wrapper">
-          <img :src="require(`../assets/images/${sidebarImage}`)" class="secondary-banner-img" alt="Img"
+          <img :src="ImageSrc" class="secondary-banner-img" alt="Img"
                v-if="sidebarImage !== undefined">
         </div>
         <div class="migration-statue-wrapper" v-if="migrationStatue===true">
@@ -150,6 +150,11 @@ export default {
   data() {
     return {
       isNumber: 3,
+    }
+  },
+  computed:{
+    ImageSrc(){
+      return `../assets/images/${this.sidebarImage}`
     }
   },
   methods: {
